@@ -6,7 +6,7 @@ function List () {
             <ul>
                 <Item marca="Aple"/>
                 <Item marca="Sansumg"/>
-                <Item marca="Xaiominpm"/>
+                <Item marca="Xaiomi"/>
             </ul>
         </>
     )
