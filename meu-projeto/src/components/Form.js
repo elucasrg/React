@@ -1,22 +1,32 @@
-function form(){
-    function cadastrarUsuario(e){
-        e.preventDefault()
-        console.log("Cadastrou!!!!!!!!!!!")
+import { useState } from 'react';
 
+function Form() {
+    const [name, setName] = useState('');
+
+    function cadastrarUsuario(e, nome) {
+        e.preventDefault();
+        console.log(nome);
+        console.log('Cadastrou!!!!!!!!!!!');
     }
-    return(
+
+    return (
         <>
-        <h1>Meu cadastro:</h1>
-        <form onSubmit={cadastrarUsuario}>
-            <div>
-                <input type="text" placeholder="Digite seu nome"/>
-            </div>
-            <div>
-                <input type="submit" value="Cadastrar"/>
-            </div>
-        </form>
+            <h1>Meu cadastro:</h1>
+            <form onSubmit={(e) => cadastrarUsuario(e, name)}>
+                <div>
+                    <label htmlFor="name">Nome: </label>
+                    <input type="text" placeholder="Digite seu nome" id="name" name="name" value={name} onChange={(e) => setName(e.target.value)} />
+                </div>
+                <div>
+                    <label htmlFor="password">Senha: </label>
+                    <input type="password" placeholder="Digite sua senha" id="password" name="password" />
+                </div>
+                <div>
+                    <input type="submit" value="Cadastrar" />
+                </div>
+            </form>
         </>
-    )
+    );
 }
 
-export default form
+export default Form;
